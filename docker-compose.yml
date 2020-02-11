@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  app:
+    build: ./
+    volumes:
+      - ./:/app
+    working_dir: /app/
+    ports:
+      - 81:80
+    depends_on:
+      - mysql
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public/
+      PHP_EXTENSION_XDEBUG: "1"
+      PHP_INI_MEMORY_LIMIT: "1G"
+      # Symfony
+      APP_ENV: "dev"
+      APP_SECRET: "8d2a5c935d8ef1c0e2b751147382bc75"
+      DATABASE_URL: "mysql://$MYSQL_USER:$MYSQL_PASSWORD@mysql:3306/$MYSQL_DATABASE"
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "$MYSQL_ROOT_PASSWORD"
+      MYSQL_DATABASE: "$MYSQL_DATABASE"
+      MYSQL_USER: "$MYSQL_USER"
+      MYSQL_PASSWORD: "$MYSQL_PASSWORD"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./services/mysql/utf8mb4.cnf:/etc/mysql/conf.d/utf8mb4.cnf:ro
+
+volumes:
+  mysql_data:
+    driver: local
