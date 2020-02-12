@@ -54,6 +54,8 @@ Encore
         useBuiltIns: 'usage',
         corejs: 3
     })
+
+    // enables Vue.js support
     .enableVueLoader()
     // enables Sass/SCSS support
     //.enableSassLoader()
@@ -63,7 +65,7 @@ Encore
 
     // uncomment to get integrity="..." attributes on your script & link tags
     // requires WebpackEncoreBundle 1.4 or higher
-    .enableIntegrityHashes(Encore.isProduction())
+    .enableIntegrityHashes()
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()

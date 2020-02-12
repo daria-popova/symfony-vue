@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 final class IndexController extends AbstractController
 {
     /**
-     * @Route("/{vueRouting}", name="index")
+     * @Route("/{vueRouting}", defaults={"vueRouting"="home"},  requirements={"vueRouting"="^(?!api|_(profiler|wdt)).*"}, name="index")
      * @return Response
      */
     public function indexAction(): Response

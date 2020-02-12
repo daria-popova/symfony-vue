@@ -18,6 +18,7 @@ services:
       APP_ENV: "dev"
       APP_SECRET: "8d2a5c935d8ef1c0e2b751147382bc75"
       DATABASE_URL: "mysql://$MYSQL_USER:$MYSQL_PASSWORD@mysql:3306/$MYSQL_DATABASE"
+      COMPOSER_MEMORY_LIMIT: -1
 
   mysql:
     image: mysql:5.7
