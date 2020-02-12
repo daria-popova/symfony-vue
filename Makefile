@@ -11,8 +11,11 @@ yarn:
 encore:
 	docker-compose exec app yarn encore dev
 cc:
-	docker-compose exec app php bin/console cache:clear
+    docker-compose exec app php bin/console cache:clear
 csfix:
 	phpcbf --ignore=src/Migrations/**,src/Kernel.php
 cscheck:
 	phpcs --ignore=src/Migrations/**,src/Kernel.php
+#no docker
+start:
+	php -S localhost:8000 -t public/
