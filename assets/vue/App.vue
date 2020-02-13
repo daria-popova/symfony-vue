@@ -39,6 +39,15 @@
           >
             <a class="nav-link">Posts</a>
           </router-link>
+          <router-link
+                  class="nav-item"
+                  tag="li"
+                  to="/about"
+                  active-class="active"
+          >
+            <a class="nav-link">About</a>
+          </router-link>
+
         </ul>
       </div>
     </nav>

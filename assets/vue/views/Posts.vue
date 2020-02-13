@@ -62,6 +62,11 @@
     >
       <post :message="post.message" />
     </div>
+
+    <div v-if="hasPosts">
+        Всего: {{ posts.length }}
+    </div>
+
   </div>
 </template>
 

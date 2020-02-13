@@ -11,7 +11,9 @@ yarn:
 encore:
 	docker-compose exec app yarn encore dev
 cc:
-    docker-compose exec app php bin/console cache:clear
+	docker-compose exec app php bin/console cache:clear
+fixt:
+	docker-compose exec app php bin/console doctrine:fixtures:load --no-interaction
 csfix:
 	phpcbf --ignore=src/Migrations/**,src/Kernel.php
 cscheck:

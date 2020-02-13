@@ -7,6 +7,8 @@ namespace App\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
+use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
@@ -27,6 +29,8 @@ class Post
 
     /**
      * @ORM\Column(name="message", type="string")
+     * @Serializer\Type("string")
+     * @Assert\NotBlank()
      *
      * @var string
      */

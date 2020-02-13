@@ -39,12 +39,10 @@ final class PostController extends AbstractController
      */
     public function createAction(Request $request): JsonResponse
     {
-        $message = $request->request->get('message');
-        if (empty($message)) {
+        $post = $this->serializer->deserialize($request->getContent(), Post::class , 'json');
+        if (empty($post->getMessage())) {
             throw new BadRequestHttpException('message cannot be empty');
         }
-        $post = new Post();
-        $post->setMessage($message);
         $this->em->persist($post);
         $this->em->flush();
         $data = $this->serializer->serialize($post, JsonEncoder::FORMAT);
