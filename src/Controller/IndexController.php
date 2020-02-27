@@ -11,11 +11,13 @@ use Symfony\Component\Routing\Annotation\Route;
 final class IndexController extends AbstractController
 {
     /**
-     * @Route("/{vueRouting}", defaults={"vueRouting"="home"},  requirements={"vueRouting"="^(?!api|_(profiler|wdt)).*"}, name="index")
+     * @Route("/", name="index")
      * @return Response
      */
     public function indexAction(): Response
     {
-        return $this->render('base.html.twig', []);
+        //TODO роутинг vue отключен для отладки graphQL. Не забыть вернуть
+        return new Response('index');
+        //return $this->render('base.html.twig', []);
     }
 }

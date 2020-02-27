@@ -8,6 +8,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-fixtures-bundle": "^3.3",
+        "overblog/graphql-bundle": "^0.13.1",
         "ramsey/uuid-doctrine": "^1.6",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "*",
@@ -36,6 +37,7 @@
     },
     "require-dev": {
         "doctrine/coding-standard": "^7.0",
+        "overblog/graphiql-bundle": "^0.2.1",
         "phpstan/phpstan": "^0.12.9",
         "squizlabs/php_codesniffer": "^3.5",
         "symfony/debug-pack": "*",

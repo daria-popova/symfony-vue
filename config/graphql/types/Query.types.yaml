@@ -1,0 +1,15 @@
+Query:
+  type: object
+  config:
+    description: "post ORM repository"
+    fields:
+      post:
+        type: "Post"
+        args:
+          id:
+            description: "Resolves using the attendee id."
+            type: "String"
+        resolve: "@=resolver('Post', [args])"
+      posts:
+        type: "[Post]"
+        resolve: "@=resolver('Posts', [args])"

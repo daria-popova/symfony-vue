@@ -1,0 +1,12 @@
+Post:
+  type: object
+  config:
+    description: "A post"
+    fields:
+      id:
+        type: "String"
+        description: "Uuid of the post"
+      message:
+        type: "String"
+        description: "Text of the post"
+
