@@ -2,13 +2,13 @@
 
 namespace App\GraphQL\Resolver;
 
-use App\Entity\Post;
+use App\Entity\User;
 use Doctrine\ORM\EntityManager;
 use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
-class PostsResolver implements ResolverInterface, AliasedInterface
+class UsersResolver implements ResolverInterface, AliasedInterface
 {
     private $em;
 
@@ -20,12 +20,12 @@ class PostsResolver implements ResolverInterface, AliasedInterface
     public static function getAliases(): array
     {
         return [
-            'resolve' => 'Posts'
+            'resolve' => 'Users'
         ];
     }
 
     public function resolve(Argument $args)
     {
-        return $this->em->getRepository(Post::class)->findAll();
+        return $this->em->getRepository(User::class)->findAll();
     }
 }

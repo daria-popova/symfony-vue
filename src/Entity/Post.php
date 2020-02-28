@@ -154,4 +154,9 @@ class Post
 
         return $this;
     }
+
+    public function getLikesCount() : int
+    {
+        return $this->getLikes()->count();
+    }
 }

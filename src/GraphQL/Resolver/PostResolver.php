@@ -8,7 +8,6 @@ use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
-
 class PostResolver implements ResolverInterface, AliasedInterface
 {
     private $em;
@@ -27,7 +26,6 @@ class PostResolver implements ResolverInterface, AliasedInterface
 
     public function resolve(Argument $args)
     {
-        $post = $this->em->getRepository(Post::class)->find($args['id']);
-        return $post;
+        return $this->em->getRepository(Post::class)->find($args['id']);
     }
 }

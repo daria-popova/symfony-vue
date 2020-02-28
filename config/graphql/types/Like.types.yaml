@@ -1,0 +1,11 @@
+Like:
+  type: object
+  config:
+    description: "Like data"
+    fields:
+      post:
+        type: "Post"
+        description: "Post"
+      user:
+        type: "User"
+        description: "User who liked post"

@@ -1,12 +1,24 @@
 Post:
   type: object
   config:
-    description: "A post"
+    description: "Post data"
     fields:
       id:
-        type: "String"
+        type: "ID"
         description: "Uuid of the post"
+      created:
+        type: "DateTime"
+        description: "Datetime of creating post"
       message:
         type: "String"
         description: "Text of the post"
+      author:
+        type: "User"
+        description: "Author of this post"
+      likes:
+        type: "[Like]"
+        description: "Likes of this post"
+      likesCount:
+        type: "Int"
+        description: "Count of likes for this post"
 

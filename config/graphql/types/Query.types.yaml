@@ -1,15 +1,26 @@
 Query:
   type: object
   config:
-    description: "post ORM repository"
+    description: "Posts ORM repository"
     fields:
       post:
         type: "Post"
         args:
           id:
-            description: "Resolves using the attendee id."
+            description: "Resolves using the post uuid."
             type: "String"
         resolve: "@=resolver('Post', [args])"
       posts:
         type: "[Post]"
         resolve: "@=resolver('Posts', [args])"
+      user:
+        type: "User"
+        args:
+          id:
+            description: "Resolves using the user uuid."
+            type: "String"
+        resolve: "@=resolver('User', [args])"
+      users:
+        type: "[User]"
+        resolve: "@=resolver('Users', [args])"
+

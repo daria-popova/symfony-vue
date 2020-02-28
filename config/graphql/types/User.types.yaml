@@ -1,0 +1,12 @@
+User:
+  type: object
+  config:
+    description: "User"
+    fields:
+      id:
+        type: "ID"
+        description: "Uuid of user"
+      login:
+        type: "String"
+        description: "User login"
+
